@@ -50,4 +50,4 @@ Sidekiq.configure_server do |config|
   end
 end
 
-Sidekiq::Grouping.start! if Sidekiq.server?
+Sidekiq::Grouping.start! if Sidekiq.server? && !!ENV['ENABLE_SIDEKIQ_GROUPING_POLLING']
